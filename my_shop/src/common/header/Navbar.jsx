@@ -16,13 +16,13 @@ function Navbar() {
                             <Link to='/'>home</Link>
                         </li>
                         <li>
-                            <Link to='/pages'>cart</Link>
+                            <Link to='/cart'>cart</Link>
                         </li>
                         <li>
                             <Link to='/account'>user account</Link>
                         </li>
                         <li>
-                            <Link to='/track'>about</Link>
+                            <Link to='/about'>about</Link>
                         </li>
                         <li>
                             <Link to='/contact'>contact</Link>

@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const multer = require('multer')
 const items = require('./handlers/items');
 const users = require('./handlers/users');
-const auth = require('./handlers/auth')
+const auth = require('./handlers/auth');
+const orders = require('./handlers/orders')
 const images = require('./handlers/images');
 const cors = require('cors');
 const path = require('path')
@@ -85,10 +86,18 @@ app.get('/getUsers/:id', users.getUsersById);
 app.post('/addUser', users.addUser);
 //update user
 app.put('/updateUser/:id', users.updateUser);
+//get order count for a user
+app.get('/orderCount/:userId', users.getOrderCount);
 
 //===================================================Auth=========================================================//
 //customer login
 app.post('/customerLogin', auth.customerLogin);
+//customer login
+app.post('/customerRegister', auth.customerRegister);
+
+//===================================================Order=========================================================//
+//customer login
+app.post('/addOrder', orders.addOrder);
 
 // Listen on enviroment port or 5000
 app.listen(port, () => console.log(`Listen on port ${port}`))

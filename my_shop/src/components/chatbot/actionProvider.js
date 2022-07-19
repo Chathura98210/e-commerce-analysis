@@ -14,6 +14,18 @@
           this.stateRef = stateRef;
           this.createCustomMessage = createCustomMessage;
       }
+
+      greet = () => {
+          const message = this.createChatBotMessage("Hello, Welcome to myshop online chat!");
+          this.addMessageToState(message)
+      }
+
+      addMessageToState = (message) => {
+          this.setState(prevState => ({
+              ...prevState,
+              messages: [...prevState.messages, message]
+          }));
+      }
   }
 
   export default ActionProvider;

@@ -1,19 +1,43 @@
-import {React,useState} from 'react'
+import {React,useState,useContext} from 'react';
 import axios from 'axios';
-import './style.css'
-import Modal from 'react-modal'
+import './style.css';
+import Modal from 'react-modal';
+import {AddCartContext } from '../../common/context';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function SlideCard({itemId,name,description,imgUrl,price}) {
 
   const [modelOpen , setModelOpen] = useState(false);
   
+  const addItems = useContext(AddCartContext);
+
   const itemClicked = () =>{
     axios.post(`http://localhost:5000/itemviewed`,{id:itemId}).then((res,err)=>{
       if(res){
         console.log(res.data);
       }
     })
-    setModelOpen(!modelOpen)
+    setModelOpen(!modelOpen);
   }
+
+  const handleAddItemClick = (e) => {
+    e.preventDefault();
+
+    axios.post(`http://localhost:5000/itemaddtocart`,{id:itemId}).then((resp,err)=>{
+      if(resp){
+        console.log(resp.data);
+        let item = {
+          id: itemId,
+          name: name,
+          url: imgUrl,
+          price: parseInt(price)
+        }
+        addItems(item);
+        toast.success(`${name} added to the cart!`);
+      }
+    })
+  };
   
 
   const modalStyles = {
@@ -47,13 +71,13 @@ function SlideCard({itemId,name,description,imgUrl,price}) {
                   <div className="h-bg">
                     <div className="h-bg-inner"></div>
                   </div>
-
-                  <a className="cart-card" href="#">
+                  <ToastContainer/>
+                  <div className="cart-card" onClick={handleAddItemClick}>
                     <span className="price">{price} LKR</span>
                     <span className="add-to-cart-card">
                       <span className="txt">Add in cart</span>
                     </span>
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>

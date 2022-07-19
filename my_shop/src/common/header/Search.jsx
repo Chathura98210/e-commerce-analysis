@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import logo from "../../public/logo192.png"; 
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { CartContext } from "../../common/context";
 
 function Search() {
+
+    const items = useContext(CartContext);
 
     window.addEventListener("scroll" , function(){
         const search = document.querySelector(".search");
@@ -13,7 +16,7 @@ function Search() {
         <section className='search'>
             <div className="container c_flex">
                 <div className="logo width">
-                    <img src={logo} alt=''/>
+                    <div className='shop-logo'>MY SHOP</div>
                 </div>
                 <div className="search-box f_flex">
                     <i className='fa fa-search'></i>
@@ -26,7 +29,7 @@ function Search() {
                     <div className='cart'>
                         <Link to="/cart">
                             <i className='fa fa-shopping-bag icon-circle'></i>
-                            <span>0</span>
+                            <span>{items.length}</span>
                         </Link>
                     </div>
                 </div>

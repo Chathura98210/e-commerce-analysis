@@ -341,3 +341,126 @@ button {
     padding: 10px;
     width: 80%;
 }
+
+.user-profile-container {
+    width: 50%;
+    border: 1px solid rgb(235, 235, 235);
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.23) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
+}
+
+.logout-btn {
+    border: 2px solid rgb(237, 109, 109);
+    text-align: center;
+    float: right;
+    width: 15%;
+    height: 25px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(237, 109, 109);
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    color: rgb(237, 109, 109);
+    background-color: white;
+}
+
+.checkout-label {
+    text-align: left;
+    color: rgb(147, 147, 147);
+}
+
+.checkout-input {
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+    text-align: center;
+    height: 30px;
+    font-size: 18px;
+    color: rgb(43, 43, 43);
+}
+
+.checkout-confirm-btn {
+    border: 2px solid rgb(11, 161, 111);
+    height: 30px;
+    margin: 10px 0;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(11, 161, 111);
+}
+
+.checkout-confirm-btn:hover {
+    color: rgb(11, 161, 111);
+    background-color: white;
+}
+
+.shop-logo {
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(26, 9, 78);
+}
+
+.order-completed-text {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 10%;
+    color: rgb(119, 119, 119);
+}
+
+.order-completed-btn-container {
+    width: 100%;
+    text-align: center;
+}
+
+.order-completed-btn {
+    border: 2px solid rgb(7, 150, 93);
+    background-color: rgb(7, 150, 93);
+    height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+    color: white;
+    margin-top: 30px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.order-completed-btn:hover {
+    background-color: white;
+    color: rgb(7, 150, 93);
+}
+
+.profile-welcome {
+    font-size: 20px;
+    margin: 20px;
+    font-weight: 700;
+    color: rgb(137, 137, 137);
+}
+
+.profile-welcome-name {
+    font-size: 20px;
+    margin: 20px;
+    font-weight: 300;
+    color: rgb(3, 3, 3);
+}
+
+.about-page-container {
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.about-header {
+    font-size: 40px;
+    color: rgb(117, 117, 117);
+    font-weight: 700;
+    padding-bottom: 50px;
+}
+
+.about-content {}
